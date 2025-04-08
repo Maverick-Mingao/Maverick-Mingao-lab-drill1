@@ -1,25 +1,58 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>To-Do List</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crochet Creations</title>
+    <link rel="icon" type="image/png" href="images/yarns.jpg">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-<div class="container">
-     <div class="todo-app">
-          <h2>To-Do List <img src="images/icon.png"></h2>
-          <div class="row">
-               <input type="text" id="input-box" placeholder="Add your task">
-               <button onclick="addTask()">Add</button> 
-          </div>
-          <ul id="list-container">
-              <!--li class="checked">Task 1</li>
-              <li>Task 1</li>
-              <li>Task 1</li> -->
-          </ul>
-     </div>
-</div>    
-<script src="script.js"></script>    
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <h1>Crochet Creations</h1>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Handcrafted with Love</h2>
+            <p>Explore our unique crocheted creations</p>
+            <div class="buttons">
+                <a href="shop.html" class="btn animate-btn">Shop Now</a>
+                <a href="about.html" class="btn animate-btn">About Us</a>
+                <a href="contact.html" class="btn animate-btn">Contact</a>
+                <a href="account.html" class="btn animate-btn">Account</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Carousel -->
+    <section class="featured-products">
+        <h3>Featured Products</h3>
+        <div class="carousel">
+            <div class="carousel-item animate-carousel"><img src="images/flower-1.jpg" alt="Flower 1"></div>
+            <div class="carousel-item animate-carousel"><img src="images/keychain-1.jpg" alt="Keychain 1"></div>
+            <div class="carousel-item animate-carousel"><img src="images/sweater-1.jpg" alt="Sweater 1"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <h3>About Crochet Creations</h3>
+        <p>Our mission is to bring joy through beautiful, handcrafted crocheted items. Learn more about our journey.</p>
+        <a href="about.html" class="btn animate-btn">Read Our Story</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Crochet Creations | All Rights Reserved</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
 </body>
 </html>
