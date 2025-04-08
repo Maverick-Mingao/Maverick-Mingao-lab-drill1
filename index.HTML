@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mav’s Brew & Boba</title>
+    <link rel="icon" href="images\MILKTEA.jpg" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: url('images/BG.jpg') no-repeat center center/cover;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 40px;
+            text-align: center;
+            border-bottom: 2px solid #e0d4c1;
+            width: 100%;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #5a4d41;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 9px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+
+        input {
+            width: 95%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #6f4f29;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #5a3e21;
+        }
+
+        p {
+            font-size: 14px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff7e6;
+            border-top: 2px solid #e0d4c1;
+            width: 100%;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to Mav’s Brew & Boba</h1>
+</header>
+
+<main>
+    <div class="container">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button onclick="validateLogin()">Login</button>
+        <p id="message"></p>
+    </div>
+</main>
+
+<footer>
+    <p style="color: black;">&copy; PROGRAMMED AND DEVELOPED BY MAVERICK G. MINGAO</p>
+</footer>
+
+<script>
+    let attempts = 0;
+    let lockout = false;
+    const correctUsername = "admin123";
+    const correctPassword = "admin123";
+
+    function validateLogin() {
+        if (lockout) return;
+
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+        let message = document.getElementById("message");
+
+        if (username === correctUsername && password === correctPassword) {
+            window.location.href = "home.html";
+            message.style.color = "green";
+            message.innerText = "Login successful!";
+        } else {
+            attempts++;
+            if (attempts >= 2) {
+                lockout = true;
+                message.style.color = "red";
+                message.innerText = "Too many failed attempts. Please wait 10 seconds.";
+                setTimeout(() => {
+                    attempts = 0;
+                    lockout = false;
+                    message.innerText = "You can try again now.";
+                    document.getElementById("password").value = "";
+                }, 10000);
+            } else {
+                message.style.color = "red";
+                message.innerText = "Incorrect username or password. Try again.";
+            }
+        }
+    }
+</script>
+</body>
+</html>

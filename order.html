@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mav’s Brew & Boba</title>
+    <link rel="icon" href="images\MILKTEA.jpg" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f4e8;
+            color: #5a4d41;
+            margin: 0;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 40px;
+            text-align: center;
+            border-bottom: 2px solid #e0d4c1;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #5a4d41;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #e0d4c1;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #c09760;
+        }
+
+        .order-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .order-list li {
+            padding: 10px;
+            border-bottom: 1px solid #e0d4c1;
+        }
+
+        .total-price {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .clear-btn, button {
+            padding: 5px 15px;
+            background-color: #c09760;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .clear-btn:hover, button:hover {
+            background-color: #a3784b;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background-color: #fff7e6;
+            border-top: 2px solid #e0d4c1;
+        }
+
+        .receipt {
+            margin-top: 30px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #e0d4c1;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .receipt h3 {
+            color: #c09760;
+            margin-bottom: 10px;
+        }
+
+        .receipt ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .receipt li {
+            padding: 5px 0;
+            border-bottom: 1px solid #e0d4c1;
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Your Orders</h1>
+    </header>
+    
+    <div class="container">
+        <h2>Order Summary</h2>
+        <ul id="order-list" class="order-list"></ul>
+        <div class="total-price" id="total-price">Total: ₱0</div>
+        <button class="clear-btn" onclick="clearOrder()">Clear Order</button>
+        
+        <center>
+            <a href="menu.html">
+                <button>Back to Menu</button>
+            </a>
+            <a href="home.html">
+                <button>Back to Home</button>
+            </a>
+        </center>
+
+        <div id="receipt" class="receipt">
+            <h3>Receipt</h3>
+            <ul id="receipt-list"></ul>
+            <div class="total-price" id="receipt-total-price">Total: ₱0</div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; PROGRAMMED AND DEVELOPED BY MAVERICK G. MINGAO</p>
+    </footer>
+
+    <script>
+        function updateOrderList() {
+            let orderItems = JSON.parse(localStorage.getItem('orderItems')) || [];
+            const orderListElement = document.getElementById('order-list');
+            const totalPriceElement = document.getElementById('total-price');
+            const receiptElement = document.getElementById('receipt');
+            const receiptListElement = document.getElementById('receipt-list');
+            const receiptTotalPriceElement = document.getElementById('receipt-total-price');
+
+            orderListElement.innerHTML = '';
+            receiptListElement.innerHTML = '';
+
+            let totalPrice = 0;
+
+            orderItems.forEach(item => {
+                const li = document.createElement('li');
+                let itemPrice = 0;
+
+                switch(item.name) {
+                    case 'Taro Oreo Milk Tea':
+                    case 'Brown Sugar Boba Milk Tea':
+                    case 'Thai Milk Tea':
+                        itemPrice = 80;
+                        break;
+                    case 'Matcha Latte with Red Beans':
+                    case 'Cheesecake Milk Tea':
+                    case 'Earl Grey Milk Tea with Honey Pearls':
+                    case 'Hokkaido Milk Tea':
+                    case 'Osmanthus Oolong Milk Tea':
+                    case 'Wintermelon Cream Milk Tea':
+                    case 'Roasted Sesame Milk Tea':
+                        itemPrice = 150;
+                        break;
+                    case 'Butterfly Pea Tea with Citrus Foam':
+                    case 'Salted Egg Yolk Milk Tea':
+                    case 'Durian Milk Tea':
+                    case 'Yakult Green Tea':
+                    case 'Charcoal Milk Tea':
+                        itemPrice = 200;
+                        break;
+                }
+
+                const itemTotal = itemPrice * item.quantity;
+                li.textContent = `${item.name} - Quantity: ${item.quantity} - ₱${itemPrice} each - Total: ₱${itemTotal}`;
+                orderListElement.appendChild(li);
+
+                const receiptLi = document.createElement('li');
+                receiptLi.textContent = `${item.name} - ₱${itemPrice} each - Quantity: ${item.quantity} - Total: ₱${itemTotal}`;
+                receiptListElement.appendChild(receiptLi);
+
+                totalPrice += itemTotal;
+            });
+
+            totalPriceElement.textContent = `Total: ₱${totalPrice}`;
+            receiptTotalPriceElement.textContent = `Total: ₱${totalPrice}`;
+            receiptElement.style.display = orderItems.length > 0 ? 'block' : 'none';
+        }
+
+        function clearOrder() {
+            localStorage.removeItem('orderItems');
+            updateOrderList();
+        }
+
+        updateOrderList();
+    </script>
+</body>
+</html>
+

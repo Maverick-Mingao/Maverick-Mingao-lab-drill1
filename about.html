@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mav’s Brew & Boba</title>
+    <link rel="icon" href="images\MILKTEA.jpg" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f4e8;
+            color: #5a4d41;
+            margin: 0;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 40px;
+            text-align: center;
+            border-bottom: 2px solid #e0d4c1;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #5a4d41;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #e0d4c1;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 5px 15px;
+            background-color: #c09760;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #a3784b;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background-color: #fff7e6;
+            border-top: 2px solid #e0d4c1;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .schedule-table th, .schedule-table td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #e0d4c1;
+        }
+
+        .schedule-table th {
+            background-color: #c09760;
+            color: white;
+        }
+
+        .schedule-table caption {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .owner-info {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .owner-info img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #e0d4c1;
+        }
+
+        .owner-info p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+
+            .schedule-table th, .schedule-table td {
+                padding: 8px;
+            }
+            footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>About Us</h1>
+    </header>
+    
+    <div class="container">
+        <p><strong>Schedule:</strong></p>
+        <table class="schedule-table">
+            <caption>Operating Hours</caption>
+            <thead>
+                <tr>
+                    <th>Days</th>
+                    <th>Opening Hours</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Monday to Friday</td>
+                    <td>10:00 AM - 10:00 PM</td>
+                </tr>
+                <tr>
+                    <td>Saturday to Sunday</td>
+                    <td>12:00 PM - 12:00 AM</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="owner-info">
+            <h3><strong>Owner:</strong></h3>
+            <img src="images\MAV.PNG" alt="Owner Image">
+            <p>Maverick G. Mingao</p>
+        </div>
+    </div>
+
+    <center>
+        <a href="home.html">
+            <button style="margin-bottom: 20px;">Back to Home</button>
+        </a>
+    </center>
+
+    <footer>
+        <p>&copy; PROGRAMMED AND DEVELOPED BY MAVERICK G. MINGAO</p>
+    </footer>
+</body>
+
+</html>

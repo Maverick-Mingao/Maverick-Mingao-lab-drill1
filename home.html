@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mav’s Brew & Boba</title>
+
+    <link rel="icon" href="images\MILKTEA.jpg" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f4e8; /* Beige */
+            color: #5a4d41; /* Darker beige for text */
+            margin: 0;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 40px;
+            text-align: center;
+            border-bottom: 2px solid #e0d4c1;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #5a4d41;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #fff7e6;
+            padding: 10px 0;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #5a4d41;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #c09760;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #e0d4c1;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            background-color: #c09760;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .button:hover {
+            background-color: #a3784b;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background-color: #fff7e6;
+            border-top: 2px solid #e0d4c1;
+        }
+
+        /* Styles for featured images section */
+        .featured-images {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            gap: 20px;
+        }
+
+        .home-image {
+            width: 30%; /* Adjust as needed */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            opacity: 0; /* Initially hidden */
+            animation: fadeIn 1.5s ease-in-out forwards;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* Animation for the images */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hover effect */
+        .home-image:hover {
+            transform: scale(2.05); /* Slight zoom effect */
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mav’s Brew & Boba</h1>
+    </header>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="order.html">Order</a>
+        <a href="about.html">About Us</a>
+    </nav>
+    
+    <center>
+        <div class="container">
+            <p>Welcome to Mav’s Brew & Boba! </p>
+            <p>Indulge in the perfect blend of flavors with our wide selection of milk teas! Whether you’re a fan of classic favorites or craving something new and exciting, we’ve got something to satisfy every taste.</p>
+        </div>
+    </center>
+
+    <!-- Featured images section -->
+    <div class="featured-images">
+        <img src="images\FEATURED1.PNG" alt="Featured 1" class="home-image">
+        <img src="images\FEATURED3.JPEG" alt="Featured 2" class="home-image">
+        <img src="images\FEATURED2.JPEG" alt="Featured 3" class="home-image">
+    </div>
+    
+    <footer>
+        <p>&copy; PROGRAMMED AND DEVELOPED BY MAVERICK G. MINGAO</p>
+    </footer>
+</body>
+</html>

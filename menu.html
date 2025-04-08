@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mav’s Brew & Boba</title>
+    <link rel="icon" href="images\MILKTEA.jpg" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f4e8;
+            color: #5a4d41;
+            margin: 0;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 40px;
+            text-align: center;
+            border-bottom: 2px solid #e0d4c1;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #5a4d41;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #e0d4c1;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #c09760;
+        }
+
+        .menu-section {
+            margin-bottom: 20px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .menu-item img {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        .menu-item span {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        input[type="number"] {
+            width: 60px;
+            padding: 5px;
+            margin-left: 10px;
+            border: 1px solid #e0d4c1;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 5px 15px;
+            background-color: #c09760;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #a3784b;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background-color: #fff7e6;
+            border-top: 2px solid #e0d4c1;
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Mav’s Brew & Boba Menu</h1>
+    </header>
+
+    <div class="container">
+    <center>
+        <h2>Menu</h2>
+        <!-- Home Button -->
+    </center>
+
+        <div class="menu-section">
+            <h3>TRENDING FLAVORS</h3>
+
+            <!-- Example Item 1 -->
+            <div class="menu-item">
+                <img src="images\taro-oreo.jpg" alt="Taro Oreo Milk Tea">
+                <span>Taro Oreo Milk Tea- ₱80</span>
+                <div>
+                    <input type="number" min="1" value="1" id="taro-oreo-quantity">
+                    <button onclick="addToOrder('Taro Oreo Milk Tea', document.getElementById('taro-oreo-quantity').value)">Order</button>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="images\brown-sugar-mt.webp" alt="Brown Sugar Boba Milk Tea">
+                <span>Brown Sugar Boba Milk Tea- ₱80</span>
+                <div>
+                    <input type="number" min="1" value="1" id="brown-sugar-mt-quantity">
+                    <button onclick="addToOrder('Brown Sugar Boba Milk Tea', document.getElementById('brown-sugar-mt-quantity').value)">Order</button>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="images\matcha-red-beans.png" alt="Matcha Latte with Red Beans">
+                <span>Matcha Latte with Red Beans- ₱150</span>
+                <div>
+                    <input type="number" min="1" value="1" id="matcha-red-beans-quantity">
+                    <button onclick="addToOrder('Matcha Latte with Red Beans', document.getElementById('matcha-red-beans-quantity').value)">Order</button>
+                </div>
+            </div>
+
+
+            <div class="menu-item">
+                <img src="images\cheesecake.jpg" alt="Cheesecake Milk Tea">
+                <span>Cheesecake Milk Tea- ₱100</span>
+                <div>
+                    <input type="number" min="1" value="1" id="cheesecake-quantity">
+                    <button onclick="addToOrder('Cheesecake Milk Tea', document.getElementById('cheesecake-quantity').value)">Order</button>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="images\thai.webp" alt="Thai Milk Tea">
+                <span>Thai Milk Tea- ₱90</span>
+                <div>
+                    <input type="number" min="1" value="1" id="thai-quantity">
+                    <button onclick="addToOrder('Thai Milk Tea', document.getElementById('thai-quantity').value)">Order</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        <div class="container">
+            <div class="menu-section">
+            <h3>SPECIALTY FLAVOR</h3>
+
+            <!-- Example Item 1 -->
+            <div class="menu-item">
+                <img src="images\Earl-Grey-Milk-Tea.jpg" alt="Earl Grey Milk Tea with Honey Pearls">
+                <span>Earl Grey Milk Tea with Honey Pearls- ₱150</span>
+                <div>
+                    <input type="number" min="1" value="1" id="Earl-Grey-Milk-Tea-quantity">
+                    <button onclick="addToOrder('Earl Grey Milk Tea with Honey Pearls', document.getElementById('Earl-Grey-Milk-Tea-quantity').value)">Order</button>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="images\hokkaido.webp" alt="Hokkaido Milk Tea">
+                <span>Hokkaido Milk Tea- ₱150</span>
+                <div>
+                    <input type="number" min="1" value="1" id="hokkaido-quantity">
+                    <button onclick="addToOrder('Hokkaido Milk Tea', document.getElementById('hokkaido-quantity').value)">Order</button>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="images\oolong_milk_tea.jpeg" alt="Osmanthus Oolong Milk Tea">
+                <span>Osmanthus Oolong Milk Tea- ₱150</span>
+                <div>
+                    <input type="number" min="1" value="1" id="oolong_milk_tea-quantity">
+                    <button onclick="addToOrder('Osmanthus Oolong Milk Tea', document.getElementById('oolong_milk_tea-quantity').value)">Order</button>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="images\winter-melon.jpg" alt="Wintermelon Cream Milk Tea">
+                <span>Wintermelon Cream Milk Tea</span>
+                <div>
+                    <input type="number" min="1" value="1" id="winter-melon-quantity">
+                    <button onclick="addToOrder('Wintermelon Cream Milk Tea', document.getElementById('winter-melon-quantity').value)">Order</button>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="images\sesame.PNG" alt="Roasted Sesame Milk Tea">
+                <span>Roasted Sesame Milk Tea- ₱150</span>
+                <div>
+                    <input type="number" min="1" value="1" id="roasted-sesame-mt-quantity">
+                    <button onclick="addToOrder('Roasted Sesame Milk Tea', document.getElementById('roasted-sesame-mt-quantity').value)">Order</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        <div class="container">
+            <div class="menu-section">
+            <h3>TOP RECOMMENDATIONS</h3>
+
+            <!-- Example Item 1 -->
+            <div class="menu-item">
+                <img src="images\butterfly-pea.jpg" alt="Butterfly Pea Tea with Citrus Foam">
+                <span>Butterfly Pea Tea with Citrus Foam- ₱200</span>
+                <div>
+                    <input type="number" min="1" value="1" id="butterfly-pea-quantity">
+                    <button onclick="addToOrder('Butterfly Pea Tea with Citrus Foam', document.getElementById('butterfly-pea-quantity').value)">Order</button>
+                </div>
+            </div>
+
+            
+            <div class="menu-item">
+                <img src="images\salted-egg.webp" alt="Salted Egg Yolk Milk Tea">
+                <span>Salted Egg Yolk Milk Tea- ₱200</span>
+                <div>
+                    <input type="number" min="1" value="1" id="salted-egg-quantity">
+                    <button onclick="addToOrder('Salted Egg Yolk Milk Tea', document.getElementById('salted-egg-quantity').value)">Order</button>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="images\durian.jpg" alt="Durian Milk Tea">
+                <span>Durian Milk Tea- ₱200</span>
+                <div>
+                    <input type="number" min="1" value="1" id="durian-quantity">
+                    <button onclick="addToOrder('Durian Milk Tea', document.getElementById('durian-quantity').value)">Order</button>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="images\yakult.jpg" alt="Yakult Green Tea">
+                <span>Yakult Green Tea- ₱200</span>
+                <div>
+                    <input type="number" min="1" value="1" id="Yakult-Green-Tea-quantity">
+                    <button onclick="addToOrder('Yakult Green Tea', document.getElementById('Yakult-Green-Tea-quantity').value)">Order</button>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="images\charcoal.png" alt="Charcoal Milk Tea">
+                <span>Charcoal Milk Tea- ₱200</span>
+                <div>
+                    <input type="number" min="1" value="1" id="charcoal-quantity">
+                    <button onclick="addToOrder('Charcoal Milk Tea', document.getElementById('charcoal-quantity').value)">Order</button>
+                </div>
+            </div>
+        </div>
+    </div>
+     <center>
+     <a href="home.html">
+            <button style="margin-bottom: 20px;">Back to Home</button>
+        </a>
+        
+      <!-- Button to go to the Order Page -->
+
+    <a href="order.html"> <!-- Change the link to the actual order page URL -->
+        <button style="margin-top: 20px;">Go to Order Page</button>
+    </a>
+</center>
+
+       
+
+    <footer>
+        <p>&copy; PROGRAMMED AND DEVELOPED BY MAVERICK G. MINGAO</p>
+    </footer>
+
+    <script>
+        // Function to add the item to the order list and save it in localStorage
+        function addToOrder(itemName, quantity) {
+            quantity = parseInt(quantity);
+            if (quantity > 0) {
+                // Create an order item
+                const orderItem = {
+                    name: itemName,
+                    quantity: quantity
+                };
+
+                // Get existing order list from localStorage
+                let orderItems = JSON.parse(localStorage.getItem('orderItems')) || [];
+
+                // Add the new order item to the order list
+                orderItems.push(orderItem);
+
+                // Save the updated order list back to localStorage
+                localStorage.setItem('orderItems', JSON.stringify(orderItems));
+
+                // Optionally alert the user or update UI here
+                alert(`This Item has been added to your order!`);
+            } else {
+                alert("Please select a valid quantity.");
+            }
+        }
+    </script>
+</body>
+</html>
