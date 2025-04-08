@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Group1</title>
+    </head>
+
+    <!-- frontend-->
+    <body>
+        <!--
+            1. times na word
+            2. textbox na lagayan input na number
+            3. button na mag tritrigger sa backend
+            4. pharagraph na mag didisplay ng output
+        -->
+
+        <div>
+            Times: 
+            <input type="text" id="times"><br>
+            <input type="button" value="Generate Song" onclick="generate();"> 
+            <p id="output"></p>
+        </div>
+    </body>
+
+    <!--backend-->
+    <script>
+        function generate(){
+            /*
+                Steps
+                1. mag type si user ng number sa textbox
+                2. pag nakatype na pindutin yung generate song
+                3.ilabas yung output
+                    3.1 Store yung value ng nakalagay sa textbox sa isang variable
+                    3.2 gumawa tayo ng variable para ma istore yung text na
+                            The wheels on the bus 
+                    3.3 magawa ng looping kung saan mag a-add ng round and round sa 
+                            The wheels on the bus depende sa dami ng input ni user
+
+                    3.4 ipakita yung output
+            */
+
+            //kinuha natin yung value ng textbox
+            var times = document.getElementById("times").value;
+
+            var text = "The wheels on the bus go ";
+
+            //looping
+            for(var i=1; i<=times; i++){
+                text=text +"round and round ";
+            }
+            
+            //display yung output
+            document.getElementById("output").innerHTML = text;
+        }
+    </script>
+
+</html>
